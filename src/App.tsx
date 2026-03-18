@@ -1,13 +1,26 @@
-import Button from "./components/Button";
+import AdminInfo from "./components/AdminInfo";
+import UserInfo from "./components/UserInfo";
+import { Info, AdminInfoList } from "./types";
 
 const App = () => {
+  const user: Info = {
+    id: 1,
+    name: "John Doe",
+    email: "john@gmail.com",
+  };
+
+  const admin: AdminInfoList = {
+    id: 2,
+    name: "Jane Smith",
+    email: "jane@gmail.com",
+    role: "admin",
+    lastLogin: new Date(),
+  };
+
   return (
     <div>
-      <Button
-        label="Click"
-        onClick={() => console.log("Clicked")}
-        disabled={false}
-      />
+      <UserInfo user={user} />
+      <AdminInfo admin={admin} />
     </div>
   );
 };
