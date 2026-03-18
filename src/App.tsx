@@ -1,11 +1,13 @@
-import User from "./components/User";
+import Button from "./components/Button";
 
 const App = () => {
   return (
     <div>
-      <User>
-        <p>Hello</p>
-      </User>
+      <Button
+        label="Click"
+        onClick={() => console.log("Clicked")}
+        disabled={false}
+      />
     </div>
   );
 };
