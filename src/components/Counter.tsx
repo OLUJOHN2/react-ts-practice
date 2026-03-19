@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import { useContext, type FC } from "react";
+import { MyContext } from "./MyContext";
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+const Counter: FC = () => {
+  const { count, increment, decrement } = useContext(MyContext);
 
-  const increment = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
   return (
     <div>
-      <h1>Counter App</h1>
       <p>Count: {count}</p>
       <button onClick={increment}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button onClick={decrement}>Decrement</button>
     </div>
   );
 };
