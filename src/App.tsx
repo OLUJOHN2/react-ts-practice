@@ -1,5 +1,6 @@
 // import Counter from "./components/Counter";
-import FocusInput from "./components/FocusInput";
+import ContactForm from "./components/ContactForm";
+// import FocusInput from "./components/FocusInput";
 // import Form from "./components/Form";
 // import Todo from "./components/Todo";
 // import UserProfile from "./components/UserProfile";
@@ -11,8 +12,9 @@ const App = () => {
       {/* <UserProfile /> */}
       {/* <Todo /> */}
       {/* <Form /> */}
+      {/* <FocusInput /> */}
 
-      <FocusInput />
+      <ContactForm />
     </div>
   );
 };
