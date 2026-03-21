@@ -1,27 +1,14 @@
-import React, { useReducer } from "react";
+import { useContext, type FC } from "react";
+import { MyContext } from "./MyContext";
 
-type State = { count: number };
-type Action = { type: "INCREMENT" } | { type: "DECREMENT" };
-
-const reducer = (state: State, action: Action): State => {
-  switch (action.type) {
-    case "INCREMENT":
-      return { count: state.count + 1 };
-    case "DECREMENT":
-      return { count: state.count - 1 };
-
-      return state;
-  }
-};
-
-const Counter = () => {
-  const [state, dispatch] = useReducer(reducer, { count: 0 });
+const Counter: FC = () => {
+  const { count, increment, decrement } = useContext(MyContext);
 
   return (
     <div>
-      <p>Count: {state.count}</p>
-      <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
-      <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
     </div>
   );
 };
